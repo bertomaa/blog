@@ -1,0 +1,105 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, updatedDate, tags, heroImage } = post.data;
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+---
+
+<BaseLayout title={title} description={description}>
+  <article>
+    <header style="margin-bottom: 2rem;">
+      {heroImage && (
+        <img 
+          src={heroImage} 
+          alt={title}
+          style="width: 100%; border-radius: 8px; margin-bottom: 1.5rem;"
+        />
+      )}
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">{title}</h1>
+      <div style="color: var(--color-text-muted); font-size: 0.875rem;">
+        <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+        {updatedDate && (
+          <span> · Updated: <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate)}</time></span>
+        )}
+      </div>
+      {tags.length > 0 && (
+        <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          {tags.map((tag) => (
+            <span style="background: var(--color-border); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+
+  <style>
+    .prose :global(h1),
+    .prose :global(h2),
+    .prose :global(h3) {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .prose :global(p) {
+      margin-bottom: 1rem;
+    }
+
+    .prose :global(ul),
+    .prose :global(ol) {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .prose :global(li) {
+      margin-bottom: 0.25rem;
+    }
+
+    .prose :global(code) {
+      background: var(--color-border);
+      padding: 0.125rem 0.25rem;
+      border-radius: 3px;
+      font-size: 0.875em;
+    }
+
+    .prose :global(pre) {
+      background: #1a1a1a;
+      color: #fafafa;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+    }
+
+    .prose :global(pre code) {
+      background: none;
+      padding: 0;
+    }
+
+    .prose :global(blockquote) {
+      border-left: 3px solid var(--color-border);
+      padding-left: 1rem;
+      font-style: italic;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+    }
+  </style>
+</BaseLayout>
