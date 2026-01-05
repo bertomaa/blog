@@ -110,7 +110,10 @@ const { title, description = "Marco Bertolino - Cloud & Cybersecurity Engineer" 
       </div>
     </footer>
     {import.meta.env.PROD && (
-      <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "172dc733f7ca46eaafa15f2a30ebc39d"}'></script><!-- End Cloudflare Web Analytics -->
+      <>
+        <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "172dc733f7ca46eaafa15f2a30ebc39d"}'></script><!-- End Cloudflare Web Analytics -->
+        <!-- Umami Analytics --><script defer src="https://cloud.umami.is/script.js" data-website-id="a535604a-c25a-41fd-ab54-58369abfb19a"></script><!-- End Umami Analytics -->
+      </>
     )}
   </body>
 </html>
