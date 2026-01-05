@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://blog.marcobertolino.dev/sitemap-index.xml
