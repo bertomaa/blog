@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "A personal blog" } = Astro.props;
+const { title, description = "Marco Bertolino - Cloud & Cybersecurity Engineer" } = Astro.props;
 ---
 
 <!doctype html>
@@ -91,7 +91,7 @@ const { title, description = "A personal blog" } = Astro.props;
   <body>
     <header style="border-bottom: 1px solid var(--color-border); padding: 1.5rem 0;">
       <nav style="max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center;">
-        <a href="/" style="font-weight: 800; font-size: 1.5rem; color: var(--color-text); letter-spacing: -0.05em;">Blog.</a>
+        <a href="/" style="font-weight: 800; font-size: 1.5rem; color: var(--color-text); letter-spacing: -0.05em;">Marco Bertolino</a>
         <div style="display: flex; gap: 1.5rem; align-items: center;">
           <a href="/" style="color: var(--color-text); font-weight: 500;">Home</a>
           <a href="/blog" style="color: var(--color-text); font-weight: 500;">Posts</a>
@@ -106,7 +106,7 @@ const { title, description = "A personal blog" } = Astro.props;
 
     <footer style="border-top: 1px solid var(--color-border); padding: 3rem 0; margin-top: 4rem;">
       <div style="max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; text-align: center; color: var(--color-text-muted); font-size: 0.875rem;">
-        &copy; {new Date().getFullYear()} — Built with Astro
+        &copy; {new Date().getFullYear()} Marco Bertolino. All rights reserved.
       </div>
     </footer>
   </body>

@@ -1,8 +1,8 @@
 ---
 title: "Hello World"
-description: "My first blog post! Welcome to my new blog built with Astro."
+description: "Welcome to my new blog."
 pubDate: 2026-01-05
-tags: ["astro", "blog", "first-post"]
+tags: ["personal", "intro"]
 draft: false
 ---
 
@@ -14,17 +14,9 @@ Welcome to my new blog! This is my first post, and I'm excited to start sharing 
 
 I'll be writing about:
 
-- **Technology** — exploring new tools and frameworks
+- **Cloud Architecture** — designing scalable and secure systems
+- **Kubernetes** — orchestration, patterns, and best practices
+- **Cybersecurity** — keeping infrastructure safe
 - **Projects** — documenting my work and learnings
-- **Ideas** — sharing thoughts on various topics
-
-## Why Astro?
-
-I chose [Astro](https://astro.build) for this blog because:
-
-1. It's perfect for content-focused sites
-2. Markdown support is first-class
-3. The build output is fast static HTML
-4. Easy deployment to GitHub Pages
 
 Stay tuned for more content!

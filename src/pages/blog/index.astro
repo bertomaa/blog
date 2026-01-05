@@ -31,9 +31,7 @@ function formatDate(date: Date): string {
           </a>
           <div style="color: var(--color-text-muted); font-size: 0.875rem; margin-top: 0.25rem;">
             <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
-            {post.data.tags.length > 0 && (
-              <span> · {post.data.tags.join(', ')}</span>
-            )}
+
           </div>
           <p style="margin-top: 0.5rem; color: var(--color-text-muted);">
             {post.data.description}

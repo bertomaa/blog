@@ -19,35 +19,41 @@ function formatDate(date: Date): string {
 }
 ---
 
-<BaseLayout title="Home" description="Welcome to my personal blog">
-  <section style="margin-bottom: 3rem;">
-    <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Welcome</h1>
-    <p style="color: var(--color-text-muted);">
-      This is my personal blog where I write about technology, projects, and ideas.
+<BaseLayout title="Marco Bertolino" description="Lead Cloud/Cybersecurity Engineer">
+  <section style="margin-bottom: 4rem;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem; letter-spacing: -0.025em;">Marco Bertolino</h1>
+    <p style="font-size: 1.25rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
+      Lead Cloud/Cybersecurity Engineer
+    </p>
+    <p style="color: var(--color-text); max-width: 50ch;">
+      Welcome to my personal blog. I write about cloud architecture, Kubernetes, cybersecurity, and my journey in tech.
     </p>
   </section>
 
   <section>
-    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Recent Posts</h2>
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.5rem;">
+      <h2 style="font-size: 1.5rem;">Recent Posts</h2>
+      <a href="/blog" style="font-size: 0.875rem;">View all posts →</a>
+    </div>
+    
     {recentPosts.length === 0 ? (
       <p style="color: var(--color-text-muted);">No posts yet.</p>
     ) : (
       <ul style="list-style: none;">
         {recentPosts.map((post) => (
-          <li style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--color-border);">
-            <a href={`/blog/${post.slug}`} style="font-size: 1.125rem; font-weight: 500;">
+          <li style="margin-bottom: 2rem;">
+            <a href={`/blog/${post.slug}`} style="font-size: 1.25rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">
               {post.data.title}
             </a>
-            <div style="color: var(--color-text-muted); font-size: 0.875rem; margin-top: 0.25rem;">
+            <div style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">
               <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
             </div>
-            <p style="margin-top: 0.5rem; color: var(--color-text-muted);">
+            <p style="color: var(--color-text-muted);">
               {post.data.description}
             </p>
           </li>
         ))}
       </ul>
     )}
-    <a href="/blog" style="display: inline-block; margin-top: 1rem;">View all posts →</a>
   </section>
 </BaseLayout>

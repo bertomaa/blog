@@ -35,15 +35,7 @@ function formatDate(date: Date): string {
           <span> · Updated: <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate)}</time></span>
         )}
       </div>
-      {tags.length > 0 && (
-        <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-          {tags.map((tag) => (
-            <span style="background: var(--color-border); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
+
     </header>
 
     <div class="prose">
